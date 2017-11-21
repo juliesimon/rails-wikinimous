@@ -1,0 +1,9 @@
+<% @articles.each do |article| %>
+  <div id="article-index" class="text-center">
+    <h1><%= link_to article.title, article_path(article) %></h1>
+    <p><%= article.content.split(".")[0..1].join(". ") %></p>
+  </div>
+<% end %>
+
+<%= link_to "Add new article", new_article_path, class: "btn btn-success" %>
+

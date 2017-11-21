@@ -1,0 +1,17 @@
+<div class="text-center fat-fa">
+  <h1>
+    <%= @article.title.split(" ")[0..4].join(" ") %>
+    <%= link_to(article_path(@article), options = { method: :delete, data: { confirm: "Are you sure?" } } ) do %>
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    <% end %>
+    <%= link_to(edit_article_path(@article)) do %>
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+    <% end %>
+  </h1>
+
+  <p><%= @article.content %></p>
+
+  <div>
+    <%= link_to "Back to articles", articles_path, class: "btn btn-sm btn-success" %>
+  </div>
+</div>
